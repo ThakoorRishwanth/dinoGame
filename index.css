@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.heading {
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.game {
+  position: relative;
+  width: 800px;
+  height: 250px;
+  background-color: #fff;
+  border: 3px solid #aaa;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.dino {
+  width: 50px;
+  height: 50px;
+  background: url('https://www.shutterstock.com/image-vector/vector-illustration-classic-pixel-dinosaur-600nw-2587592815.jpg') no-repeat center/cover;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+.cactus {
+  width: 30px;
+  height: 50px;
+  background: url('https://play-lh.googleusercontent.com/4PU6axjqNVSiwveBTd7pj5oGnj_7K5_gIIGDIeO7qDbuQV8Os2OTVW_HVfv_dzZaYQQ=w600-h300-pc0xffffff-pd') no-repeat center/cover;
+  position: absolute;
+  bottom: 50px;
+  right: -30px;
+  animation: moveCactus 2s linear infinite;
+}
+
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #6b3e09;
+}
+
+@keyframes moveCactus {
+  0% { right: -30px; }
+  100% { right: 830px; }
+}
+
+.jump {
+  animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+  0% { bottom: 50px; }
+  50% { bottom: 150px; }
+  100% { bottom: 50px; }
+}
+
+#game-over {
+  text-align: center;
+  background: #fff3cd;
+  border: 2px dashed red;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+#restart-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#restart-btn:hover {
+  background: #45a049;
+}
